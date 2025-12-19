@@ -34,9 +34,8 @@ def main():
 
     # --- Step 2: Model & Optimizer Initialization ---
     # [Device Setup] 
-    # Force CPU mode: RTX 5070 (sm_120 Blackwell) is not yet supported by current PyTorch.
-    # Once PyTorch 2.6+ with CUDA 12.8+ is released, use: torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    device = torch.device("cpu")
+    # Current environment (PyTorch 2.9.1+cu128) supports RTX 5070 Laptop GPU.
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f">>> Using device: {device}")
 
     # Initialize V4 Model (Physics-Hardcoded Gate)
